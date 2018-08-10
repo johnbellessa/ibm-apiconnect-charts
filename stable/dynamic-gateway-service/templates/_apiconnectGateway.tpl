@@ -132,19 +132,6 @@ auto-startup.cfg: |
     %if% isfile temporary:///backtrace
     save error-report
     %endif%
-
-auto-user.cfg: |
-    top; configure terminal;
-
-    %if% available "user"
-
-    user "admin"
-      summary "Administrator"
-      password-hashed "$1$12345678$kbapHduhihjieYIUP66Xt/"
-      access-level privileged
-    exit
-
-    %endif%
 {{- end }}
 {{- define "apiconnectDomainConfig" }}
 apiconnect.cfg: |
